@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -23,5 +25,16 @@ public class Main {
         String isentoIpva = carro1.ehIsenIPVA(2024)?" issento" : "não isento";
         System.out.println("O " + carro1.modelo+ "" + isentoIpva + "do IPVA");
 
+        Loja loja = new Loja();
+        Cidade cidade = new Cidade();
+        cidade.nome = "Campo Mourão";
+        cidade.estado = Estado.PR;
+        loja.nome = "Auto Imports";
+        loja.cidade = cidade;
+
+        List<Carro>carros = new ArrayList<>();
+        carros.add(carro1);
+
+        loja.estoque = carros;
     }
 }
